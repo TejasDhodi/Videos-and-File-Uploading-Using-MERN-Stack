@@ -48,7 +48,7 @@ const VideoUploadComponent = () => {
       setLoad(false)
 
       if (res.status === 201) {
-        navigate("https://videos-and-file-uploading-using-mern-stack.vercel.app/videos")
+        navigate("/videos")
       }
       console.log(data);
 
