@@ -39,7 +39,7 @@ const Videos = () => {
     }
 
     const handleNavigation = () => {
-        navigate("/")
+        navigate("https://videos-and-file-uploading-using-mern-stack.vercel.app/")
     }
 
     useEffect(() => {

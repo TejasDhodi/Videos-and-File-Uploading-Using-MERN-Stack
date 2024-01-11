@@ -44,11 +44,11 @@ const VideoUploadComponent = () => {
 
       const data = res.data
       alert('Success')
-      
+
       setLoad(false)
 
       if (res.status === 201) {
-        navigate("/videos")
+        navigate("https://videos-and-file-uploading-using-mern-stack.vercel.app/videos")
       }
       console.log(data);
 
