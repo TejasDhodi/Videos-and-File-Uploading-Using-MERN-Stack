@@ -29,7 +29,7 @@ td:last-child {
 
 table {
     border: 2px solid;
-    width: 60%;
+    width: auto;
     margin: 1rem auto;
     box-shadow: 0 0 15px;
 }
@@ -83,4 +83,23 @@ button {
     cursor: pointer;
     font-weight: bolder;
     border-radius: 0 0 1rem 1rem;
+}
+
+@media screen and (max-width:550px) {
+    table {
+        width: 80%;
+
+    }
+}
+
+@media screen and (max-width:481px) {
+    table {
+        width: 60%;
+    }
+
+    thead,
+    th,
+    td {
+        font-size: 0.7rem;
+    }
 }

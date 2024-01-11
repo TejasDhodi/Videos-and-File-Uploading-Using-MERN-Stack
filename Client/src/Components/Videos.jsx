@@ -31,15 +31,29 @@ const Videos = () => {
         const res = await axios.delete(`https://video-upload-pvz4.onrender.com/api/v1/video/${id}`);
 
         if (res.status === 200) {
-            alert("Deleted Successfully")
             setVideo(prevVideo => prevVideo.filter(video => video.id !== id))
+            alert("Deleted Successfully")
         } else {
             alert("Can Not Delete ")
         }
+
+        showVideos();
     }
 
     const handleNavigation = () => {
         navigate("/")
+    }
+
+    const handleRandomChar = (length) => {
+        let link = ""
+        let str = "ABCDEFHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+        for(let i=0; i<length; i++) {
+            let char = Math.floor(Math.random() * str.length + 1);
+            link += str.charAt(char)
+        }
+
+        return link
     }
 
     useEffect(() => {
@@ -61,11 +75,13 @@ const Videos = () => {
                 {
                     video.map((currElem, index) => {
                         const { Title, video, subtitle, _id } = currElem;
+                        const randomLink = handleRandomChar(5);
+                        const links = `https://${randomLink}.com`
                         return (
                             <tr>
                                 <td>{index + 1}</td>
                                 <td>{Title}</td>
-                                <td><a href={video}>{video}</a></td>
+                                <td><a href={video}>{links}</a></td>
                                 <td><a href={subtitle}>📁</a></td>
                                 <td onClick={() => handleDeleteVideo(_id)}>Delete</td>
                             </tr>
