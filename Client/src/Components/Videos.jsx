@@ -8,7 +8,7 @@ const Videos = () => {
 
     const showVideos = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/v1");
+            const res = await axios.get("https://video-upload-pvz4.onrender.com/api/v1");
             const data = res.data;
             //   setVideo(data);
 
@@ -28,7 +28,7 @@ const Videos = () => {
     };
 
     const handleDeleteVideo = async (id) => {
-        const res = await axios.delete(`http://localhost:3000/api/v1/video/${id}`);
+        const res = await axios.delete(`https://video-upload-pvz4.onrender.com/api/v1/video/${id}`);
 
         if (res.status === 200) {
             alert("Deleted Successfully")

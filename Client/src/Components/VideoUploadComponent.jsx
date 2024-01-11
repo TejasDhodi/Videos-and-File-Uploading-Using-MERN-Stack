@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
 const VideoUploadComponent = () => {
-  
+
   const [file, setFile] = useState({
     video: "",
     subtitle: ""
@@ -36,7 +36,7 @@ const VideoUploadComponent = () => {
 
     try {
       setLoad(!load)
-      const res = await axios.post("http://localhost:3000/api/v1/video", formData, {
+      const res = await axios.post("https://video-upload-pvz4.onrender.com/api/v1/video", formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -44,12 +44,13 @@ const VideoUploadComponent = () => {
 
       const data = res.data
       alert('Success')
+      
+      setLoad(false)
 
       if (res.status === 201) {
         navigate("/videos")
       }
       console.log(data);
-      setLoad(false)
 
     } catch (error) {
       console.log('Unable to Upload Video', error);

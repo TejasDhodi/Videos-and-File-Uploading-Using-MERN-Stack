@@ -9,7 +9,7 @@ const Database = require('./Database/Upload.Database');
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({
-    origin: "http://localhost:5173"
+    origin: "https://videos-and-file-uploading-using-mern-stack.vercel.app/"
 }));
 
 // Routes Import
